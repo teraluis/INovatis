@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Inovatis</title>
+<link rel="stylesheet" type="text/css" href="..\VUE\bootstrap\bootstrap-3.3.6-dist\css\bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="..\VUE\bootstrap\bootstrap-3.3.6-dist\css\bootstrap-theme.min.css">
+<script src="..\VUE\bootstrap\bootstrap-3.3.6-dist\js\bootstrap.min.js"></script>
+<script src="..\VUE\bootstrap\bootstrap-3.3.6-dist\js\jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/global.css">
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="..\VUE\Chart.js-master\Chart.js"></script>
+<link rel="icon" type="image/ico" href="../img/logo.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@font-face {
+font-family: 'glyphicons-halflings-regular';
+src: url('C:\Users\luism\workspace\iNovatisSiteVitrine\VUE\bootstrap\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.eot');
+src: url('C:\Users\luism\workspace\iNovatisSiteVitrine\VUE\bootstrap\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.otf') format('truetype'),
+     url('C:\Users\luism\workspace\iNovatisSiteVitrine\VUE\bootstrap\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff') format('woff'),
+     url('C:\Users\luism\workspace\iNovatisSiteVitrine\VUE\bootstrap\bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+     url('quadranta.svg#QuadrantaBold') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    width: 100%;
+    height: 460px;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto
+}
+.carousel-caption > h3,.carousel-caption > p{
+color:gray;
+font-family:arial;
+font-size:2em;
+font-weight:bold;
+
+}
+
+.vertical {
+  position: absolute;
+  top: 50%; /* poussé de la moitié de hauteur du référent */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+.logo {
+	verttical-align:top;
+    width: 45px;
+    border: 0;
+    height: 45px;
+    margin-top:-12px;
+
+}
+.logoFooter {
+	verttical-align:top;
+    width: 45px;
+    border: 0;
+    height: 45px;
+    margin-top:10px;
+
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #100C0C;
+}
+#largo {
+	width:105%;
+	margin-left:-15px;
+	/*margin-right:100px;*/
+}
+.widget-icon {
+background-color:#1540B0;
+color:white;
+padding-top:7px;
+height:5em;
+border-radius: 8px 0px 0px 8px;
+}
+.widget {
+background-color:#335ECE;
+color:white;
+width:200px;
+padding-top:5px;
+height:5em;
+border-radius:0px 8px 8px 0px;
+}
+.widget-icon2 {
+background-color:rgb(230, 126, 34);
+color:white;
+padding-top:7px;
+height:5em;
+border-radius: 8px 0px 0px 8px;
+}
+.widget2 {
+background-color:rgb(211, 84, 0);
+color:white;
+width:200px;
+padding-top:5px;
+height:5em;
+border-radius:0px 8px 8px 0px;
+}
+.widget-icon3 {
+background-color:#1D9E74;
+color:white;
+padding-top:7px;
+height:5em;
+border-radius: 8px 0px 0px 8px;
+}
+.widget3 {
+background-color:#0F7447;
+color:white;
+width:200px;
+padding-top:5px;
+height:5em;
+border-radius:0px 8px 8px 0px;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html"><img class="logo" src="../img/Logo.PNG"  ></img></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><i class="fa fa-home"></i>
+        Accueil</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-shopping-bag"></i>
+           Produits <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="smartphones.html">Smartphones</a></li>
+            <li><a href="#">Produit</a></li>
+            <li><a href="#">Produit</a></li>
+          </ul>
+        </li>
+        <li class="active" ><a href="dashboard.html">Présentation</a></li>
+        <li><a href="trouver.html">Nous trouver</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+ 		<li><a data-toggle="modal" data-target="#inscription" style="cursor:pointer"><span class="glyphicon glyphicon-user" ></span> Inscription</a></li>
+        <li><a data-toggle="modal" data-target="#connexion" style="cursor:pointer"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<!-- Modal -->
+<div id="inscription" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Inscription</h4>
+      </div>
+      <div class="modal-body">
+		<form>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Addresse e-mail</label>
+		    <input type="email" class="form-control" id="email" placeholder="nom@domaine.ext">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Mot Passe</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot Passe">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Confirmation</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot Passe">
+		  </div>		  
+
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox"> J'accepte les conditions génerales
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-default">S'inscrire</button>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">fermer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--fin modal-->
+</div>
+
+<div class="container">
+<!-- Modal -->
+<div id="connexion" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Connexion</h4>
+      </div>
+      <div class="modal-body">
+		<form>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Addresse e-mail</label>
+		    <input type="email" class="form-control" id="email" placeholder="nom@domaine.ext">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Mot Passe</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot Passe">
+		  </div>		  
+
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Rester connecté
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-default">Connexion</button>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">fermer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--fin modal-->
+</div>
+
+<!--<iframe width="auto" height="800" frameborder="0" marginheight="0"  
+ marginwidth="0" src="https://app.serenytics.com/viewer/webapps/15021806-09ea-41ac-bdad-02948bfd9e9d/"></iframe>-->
+
+<div class="container">
+
+ <div class="row">
+    <div class="row-height">
+      <div class="col-xs-4 col-sm-1 col-sm-height widget-icon">
+        <div class="inside inside-full-height">
+          <div class="content"><i class="fa fa-bar-chart fa-4x fa-xs" ></i></div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-1 col-sm-height col-sm-bottom widget">
+        <div class="inside inside-full-height">
+          <div class="content"><h4>23 468 537€</h4>Global </div>
+        </div>
+      </div>
+     </div>
+     
+     <div class="row-height">
+      <div class="col-xs-4 col-md-offset-1 col-sm-1 col-sm-height widget-icon2">
+        <div class="inside inside-full-height">
+          <div class="content"><i class="fa fa-line-chart fa-4x fa-xs"></i></div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-1 col-sm-height col-sm-bottom widget2">
+        <div class="inside inside-full-height">
+          <div class="content"><h4>34%<i class="fa fa-arrow-up"></i></h4>Benefices</div>
+        </div>
+      </div>
+     </div>
+	<div class="row-height">
+      <div class="col-xs-4 col-md-offset-1 col-sm-1 col-sm-height widget-icon3">
+        <div class="inside inside-full-height">
+          <div class="content"><i class="fa fa-money fa-4x fa-xs"></i></div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-1 col-sm-height col-sm-bottom widget3">
+        <div class="inside inside-full-height">
+          <div class="content"><h4>4M€<i class="fa fa-arrow-up"></i></h4>2016 <b>Recherche<i class="fa fa-arrow-up"></i></b></div>
+        </div>
+      </div>
+     </div>            
+</div>
+<hr>
+<h4>Chiffre d'Affaires <b>2016</b> <i class="fa fa-tags"></i></h4>
+  <table class="table">
+    <thead>
+      <tr>
+      	<th>Trimestre <i class="fa fa-line-chart"></i></th>
+        <th>Ventes Mondial <i class="fa fa-bar-chart"></i></th>
+        <th>Ventes France <i class="fa fa-pie-chart"></i></th>
+        <th>Dettes <i class="fa fa-eur"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="danger">
+      	<td><b>Janvier</b></td>
+        <td>394 026 390 <i class="fa fa-arrow-up" style="color:green"></i></td>
+        <td>811 125 <i class="fa fa-arrow-up" style="color:green"></i></td>
+        <td>86 64 127<i class="fa fa-arrow-up" style="color:red"></i></td>
+      </tr>
+      <tr class="info">
+      	<td><b>Mai</b></td>
+        <td>1 577 395 <i class="fa fa-arrow-down" style="color:green"></i></td>
+        <td>15 715  <i class="fa fa-arrow-down" style="color:green"></i></td>
+        <td>157 395 <i class="fa fa-arrow-down" style="color:green"></i></td>
+      </tr>
+      <tr class="success">
+      	<td><b>septèmbre</b></td>
+        <td>1 671 595 <i class="fa fa-arrow-up" style="color:green"></i></td>
+        <td>1 577  <i class="fa fa-arrow-down" style="color:red"></i></td>
+        <td>15 715 <i class="fa fa-arrow-down" style="color:green"></i></td>
+      </tr>
+    </tbody>
+  </table>
+<hr>
+<h3 style="text-align:center;font-family:arial">Ventes par millons en <b>2014</b></h3>
+<canvas id="canvas" width="100" height="39"></canvas>  
+<script>
+var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+
+var barChartData = {
+	labels : ["Lactops","Tablettes","Smartphones","Ecrans","Lunettes3D","Ecrans3D","SmartWatch"],
+	datasets : [
+		{
+			label: "2015",
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,0.5)",
+			highlightFill: "rgba(30,120,220,0.75)",
+			highlightStroke: "rgba(220,220,220,1)",
+			data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+		},
+        {
+            label: "2014",
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+        }		
+	]
+
+}
+window.onload = function(){
+	var ctx = document.getElementById("canvas").getContext("2d");
+	window.myBar = new Chart(ctx).Bar(barChartData, {
+		responsive : true
+	});
+}
+
+</script>
+
+</div>
+
+
+    <footer>
+      <section id="couleur1">
+            <div class="container">
+                <div class="row text-center center-block" >
+                    <div class="col-md-4">
+                      <i class="fa fa-phone fa-4x" style="color:#e67e22"></i>
+                      <p >01 46 04 81 63</p>
+                      <p>06 43 70 68 30</p>  
+                    </div>
+                    <div class="col-md-4">
+                      <i class="fa fa-envelope-o fa-4x" style="color:#e67e22"></i><br> <br>                    
+                      <a href="mailto:luismanresaramirez@gmail.com?subject=iNovatis_Site_Vitrine&cc=mohames@gmail.com&bcc=iNovatist@inovatis.com&body=Bonjour_Monsieur" style="decoration:none">contact@inovatis.com</a>
+                    </div>
+                    <div class="col-md-4">
+                      <i class="fa fa-map-marker fa-4x" style="color:#e67e22"></i>
+                      <p>1 Avenue de France </p>
+                      <p>75013 Paris</p>  
+                    </div>                    
+                </div>  
+      </section>
+      <section id="couleur2">
+                 <div class="row text-center center-block">
+                    <div class="col-md-4  copyright" style="line-height:70px">
+                        <span style="color:white"><b>&copy;2016.iNovatis. All right reserved</b></span>                                             
+                      
+                    </div>
+                    <div class="col-md-4" style="line-height:70px">
+                      <img class="logoFooter" src="../img/Logo.PNG"  >
+                    </div>                    
+                    <div class="col-md-4" style="line-height:70px">
+                        <ul class="list-inline">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="dashboard.html">Présentation</a></li>
+                            <li><a href="trouver.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+      </section>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="..\VUE\bootstrap\bootstrap-3.3.6-dist\js\jquery-migrate-1.2.1.min.js"><\/script>')</script>
+    <script src="..\VUE\bootstrap\bootstrap-3.3.6-dist\js\bootstrap.min.js"></script>
+    <script src="..\VUE\bootstrap\bootstrap-3.3.6-dist\js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="..\VUE\bootstrap\bootstrap-3.3.6-dist\js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
